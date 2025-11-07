@@ -1,0 +1,86 @@
+/* --- Global Styles (နောက်ခံ) --- */
+body {
+    background-color: #000; /* အမည်းရောင် နောက်ခံ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Superman Logo Shield --- */
+.superman-logo {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    /* ၆ ဘက်ပါ စိန်ပုံစံ ဖန်တီးရန် */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: #CC0000; /* အပြင်ဘက် အနီရောင် */
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* အနီရောင် Glow Effect */
+}
+
+/* အတွင်းဘက်ဒိုင်း (အဝါ) */
+.shield-outer {
+    position: absolute;
+    top: 5px; 
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    clip-path: inherit; /* အပြင်ဘက်ဒိုင်းပုံစံအတိုင်းယူသည် */
+    background-color: #FFD900; /* အဝါရောင် */
+}
+
+/* S စာလုံး ပတ်လည် အနီရောင်ဘောင် */
+.shield-inner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    clip-path: inherit;
+    background-color: #CC0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* အလင်းရောင်ကို ဘောင်အတွင်းမှာပဲ ထိန်းထားဖို့ */
+}
+
+/* S စာလုံး Style */
+.s-letter {
+    color: #FFD900; 
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 1;
+    z-index: 10; /* အလင်းရောင်အပေါ်မှာ ရှိနေစေရန် */
+    text-shadow: 0 0 15px rgba(255, 217, 0, 0.6); 
+}
+
+/* --- Dynamic Light Runner Effect --- */
+.light-runner {
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 40%; /* အလင်းတန်းရဲ့ အကျယ် */
+    height: 100%;
+    /* အလင်းတန်းပုံစံအတွက် Gradient */
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.8) 50%, /* အလင်းဆုံးအပိုင်း */
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg); /* အလင်းတန်းကို စောင်းထားခြင်း */
+    animation: run-light 3s linear infinite; /* Animation စတင်ခြင်း */
+}
+
+/* 🏃‍♂️ အလင်းရောင် ရွေ့လျားမှု Animation Keyframes */
+@keyframes run-light {
+    0% {
+        left: -40%; 
+    }
+    100% {
+        left: 100%; 
+    }
+}
